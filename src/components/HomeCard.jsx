@@ -1,7 +1,7 @@
 // React
 import React from "react";
 // Router
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 // Material UI
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -10,33 +10,46 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
+  card: {
+    height: "15rem",
+    borderRadius: "1rem",
+  },
+  cardActionArea: {
+    height: "100%",
+  },
   cardContent: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: "15rem"
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
   },
   emoji: {
-    fontSize: '5rem',
+    fontSize: "5rem",
   },
 });
 
 const ComingSoon = (props) => {
   const isComingSoon = props.isComingSoon;
-  if(isComingSoon != "/heart"){
-    return (<Typography variant="body1" gutterBottom>
-      (Coming soon)
-    </Typography>)
+  if (isComingSoon != "/heart" && isComingSoon != "/playlists") {
+    return (
+      <Typography variant="body1" gutterBottom>
+        (Coming soon)
+      </Typography>
+    );
   }
   return null;
-}
+};
 
-const MaterialCard = (card) => {
+const HomeCard = (card) => {
   const classes = useStyles();
   return (
-    <Card onClick={()=>{card.history.push(card.link)}}>
-      <CardActionArea>
+    <Card
+      className={classes.card}
+      onClick={() => {
+        card.history.push(card.link);
+      }}
+    >
+      <CardActionArea className={classes.cardActionArea}>
         <CardContent className={classes.cardContent}>
           <Typography className={classes.emoji}>{card.emoji}</Typography>
           <Typography component="h2" variant="h4">
@@ -49,4 +62,4 @@ const MaterialCard = (card) => {
   );
 };
 
-export default withRouter(MaterialCard);
+export default withRouter(HomeCard);
