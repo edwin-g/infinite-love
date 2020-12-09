@@ -15,27 +15,27 @@ class Playlists extends Component {
   componentDidMount() {
     const playlists = [
       {
-        name: "Romance",
-        img: "/images/romance-playlist-card.jpg",
-        videos: [
+        playlistName: "Romance",
+        playlistImageSrc: "/images/romance-playlist-card.jpg",
+        playlistVideosUrls: [
           "https://www.youtube.com/watch?v=rXPfovXw2tw", // Brian McKnight - Back At One
           "https://www.youtube.com/watch?v=zDKO6XYXioc", // Boyz II Men - End Of The Road
           "https://www.youtube.com/watch?v=d7cVLE4SaN0", // Bryson Tiller - Don't
         ],
       },
       {
-        name: "Passion",
-        img: "/images/passion-playlist-card.jpg",
-        videos: [
+        playlistName: "Passion",
+        playlistImageSrc: "/images/passion-playlist-card.jpg",
+        playlistVideosUrls: [
           "https://www.youtube.com/watch?v=hglD0HxshhM", // Ta-ku feat. Atu - Long Time No See (Ekali Remix)
           "https://www.youtube.com/watch?v=5lbiB5WNEpU", // Atu - Missing You (ft. Dpat)
           "https://www.youtube.com/watch?v=slo8YLzQFgY", // DOJO! - CONJURE (FEAT. FLOYD)
         ],
       },
       {
-        name: "Love",
-        img: "/images/love-playlist-card.jpg",
-        videos: [
+        playlistName: "Love",
+        playlistImageSrc: "/images/love-playlist-card.jpg",
+        playlistVideosUrls: [
           "https://www.youtube.com/watch?v=IxszlJppRQI", // Ne-Yo - So Sick
           "https://www.youtube.com/watch?v=pAyKJAtDNCw", // Michael Jackson - You Are Not Alone
           "https://www.youtube.com/watch?v=uQFVqltOXRg", // Daniel Caesar - Get You ft. Kali Uchis
@@ -68,15 +68,19 @@ class Playlists extends Component {
   };
 
   youtubePlaylistGenerator = (playlist) => {
-    const playlistName = playlist.name;
-    const playlistImage = playlist.img;
-    const videos = playlist.videos;
+    const { playlistName, playlistImageSrc, playlistVideosUrls } = playlist;
     let youtubePlaylistUrl = "https://www.youtube.com/watch_videos?video_ids=";
-    videos.map((video) => {
+    playlistVideosUrls.map((video) => {
       youtubePlaylistUrl += this.extractYoutubeVideoID(video) + ",";
     });
-    const playList = { playlistName, playlistImage, youtubePlaylistUrl };
-    this.setState((state) => ({ playlists: [...state.playlists, playList] }));
+    const playlistResult = {
+      playlistName,
+      playlistImageSrc,
+      youtubePlaylistUrl,
+    };
+    this.setState((state) => ({
+      playlists: [...state.playlists, playlistResult],
+    }));
   };
 
   render() {
@@ -90,7 +94,7 @@ class Playlists extends Component {
               <Grid key={index} item xs={12} md={6}>
                 <PlaylistCard
                   name={playlist.playlistName}
-                  img={playlist.playlistImage}
+                  img={playlist.playlistImageSrc}
                   link={playlist.youtubePlaylistUrl}
                 />
               </Grid>
