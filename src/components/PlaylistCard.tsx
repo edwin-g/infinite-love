@@ -37,7 +37,7 @@ const useStyles = makeStyles({
   },
 });
 
-const PlaylistCard = (card) => {
+const PlaylistCard = (card: any) => {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
