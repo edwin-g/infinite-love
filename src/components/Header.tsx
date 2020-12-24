@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = (card) => {
+const Header = (card: any) => {
   const classes = useStyles();
   return (
     <AppBar position="static">

@@ -6,8 +6,11 @@ import Grid from "@material-ui/core/Grid";
 // Components
 import PlaylistCard from "../components/PlaylistCard";
 
-class Playlists extends Component {
-  constructor(props) {
+interface PlaylistsState {
+  playlists: Array<object>;
+}
+class Playlists extends Component<{}, PlaylistsState> {
+  constructor(props: any) {
     super(props);
     this.state = { playlists: [] };
   }
@@ -47,7 +50,7 @@ class Playlists extends Component {
     });
   }
 
-  extractYoutubeVideoID = (url) => {
+  extractYoutubeVideoID = (url: any) => {
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
     var match = url.match(regExp);
     if (match && match[7].length == 11) {
@@ -61,16 +64,16 @@ class Playlists extends Component {
    * Another alternative that will extract the video ID
    * as well as the playlist ID from YouTube URLS
    */
-  extractYoutubeVideoIDBis = () => {
+  extractYoutubeVideoIDBis = (url: any) => {
     var id = url.match("v=([a-zA-Z0-9_-]+)&?")[1];
     var list = url.match("list=([a-zA-Z0-9-_]+)&?");
     list = list ? list[1] : "";
   };
 
-  youtubePlaylistGenerator = (playlist) => {
+  youtubePlaylistGenerator = (playlist: any) => {
     const { playlistName, playlistImageSrc, playlistVideosUrls } = playlist;
     let youtubePlaylistUrl = "https://www.youtube.com/watch_videos?video_ids=";
-    playlistVideosUrls.map((video) => {
+    playlistVideosUrls.map((video: any) => {
       youtubePlaylistUrl += this.extractYoutubeVideoID(video) + ",";
     });
     const playlistResult = {
@@ -89,7 +92,7 @@ class Playlists extends Component {
       <React.Fragment>
         <Typography variant="h1">Playlists</Typography>
         <Grid container spacing={3}>
-          {playlists.map((playlist, index) => {
+          {playlists.map((playlist: any, index: any) => {
             return (
               <Grid key={index} item xs={12} md={6}>
                 <PlaylistCard

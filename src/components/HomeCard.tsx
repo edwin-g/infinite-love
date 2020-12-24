@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ComingSoon = (props) => {
+const ComingSoon = (props: any) => {
   const isComingSoon = props.isComingSoon;
   if (isComingSoon != "/heart" && isComingSoon != "/playlists") {
     return (
@@ -40,7 +40,7 @@ const ComingSoon = (props) => {
   return null;
 };
 
-const HomeCard = (card) => {
+const HomeCard = (card: any) => {
   const classes = useStyles();
   return (
     <Card
