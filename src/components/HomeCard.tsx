@@ -30,7 +30,11 @@ const useStyles = makeStyles({
 
 const ComingSoon = (props: any) => {
   const isComingSoon = props.isComingSoon;
-  if (isComingSoon != "/heart" && isComingSoon != "/playlists") {
+  if (
+    isComingSoon != "/heart" &&
+    isComingSoon != "/playlists" &&
+    isComingSoon != "/flowers"
+  ) {
     return (
       <Typography variant="body1" gutterBottom>
         (Coming soon)
