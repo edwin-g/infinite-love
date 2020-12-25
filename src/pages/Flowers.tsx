@@ -53,6 +53,9 @@ export default () => {
         <Button color="primary" variant="contained" fullWidth type="submit">
           Generate
         </Button>
+        <Button color="primary" variant="contained" fullWidth type="submit">
+          Copy to clipboard
+        </Button>
       </form>
     </div>
   );
