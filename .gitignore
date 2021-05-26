@@ -6,4 +6,9 @@
 
 # misc
 .DS_Store
+<<<<<<< HEAD
 .eslintcache
+=======
+.eslintcache
+.vscode
+>>>>>>> develop
