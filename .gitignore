@@ -7,8 +7,13 @@
 # misc
 .DS_Store
 <<<<<<< HEAD
+<<<<<<< HEAD
 .eslintcache
 =======
 .eslintcache
 .vscode
 >>>>>>> develop
+=======
+.eslintcache
+.vscode
+>>>>>>> feature/flowers

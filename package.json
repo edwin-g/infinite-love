@@ -1,9 +1,13 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "name": "infinite-love",
 =======
   "name": "infinitelove",
 >>>>>>> develop
+=======
+  "name": "infinitelove",
+>>>>>>> feature/flowers
   "version": "0.2.0",
   "description": "",
   "main": "index.js",
@@ -18,14 +22,19 @@
   "repository": {
     "type": "git",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "url": "git+https://github.com/edwin-g/infinite-love.git"
 =======
     "url": "git+https://github.com/edwin-g/infinitelove.git"
 >>>>>>> develop
+=======
+    "url": "git+https://github.com/edwin-g/infinitelove.git"
+>>>>>>> feature/flowers
   },
   "author": "Edwin Celini",
   "license": "ISC",
   "bugs": {
+<<<<<<< HEAD
 <<<<<<< HEAD
     "url": "https://github.com/edwin-g/infinite-love/issues"
   },
@@ -38,6 +47,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1"
 =======
+=======
+>>>>>>> feature/flowers
     "url": "https://github.com/edwin-g/infinitelove/issues"
   },
   "homepage": "https://edwin-g.github.io/infinitelove/",
@@ -58,7 +69,10 @@
     "react-spring": "^8.0.27",
     "typescript": "^4.1.3",
     "yup": "^0.32.8"
+<<<<<<< HEAD
 >>>>>>> develop
+=======
+>>>>>>> feature/flowers
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
